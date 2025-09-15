@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Учебник с подсветкой кода</title>
+    <!-- Подключаем библиотеку highlight.js -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <style>
+        .explanation {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Создание форм</h1>
+    
+    <p>Пример формы для ввода данных:</p>
+    
+    <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Имя:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    
+    <div class="explanation">
+        <h3>📝 Пояснение:</h3>
+        <ul>
+            <li><code>action</code> - указывает куда отправлять данные формы</li>
+            <li><code>method</code> - метод отправки (get/post)</li>
+            <li><code>required</code> - делает поле обязательным для заполнения</li>
+        </ul>
+    </div>
+</body>
+</html>
