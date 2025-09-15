@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Учебник с вкладками</title>
+    <style>
+        .tabs {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .tab-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Работа с изображениями</h1>
+    
+    <div class="tabs">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openTab('tab1')">Код</button>
+            <button class="tab-btn" onclick="openTab('tab2')">Объяснение</button>
+            <button class="tab-btn" onclick="openTab('tab3')">Результат</button>
+        </div>
+        
+        <div id="tab1" class="tab-content active">
+            <pre><code>&lt;img src="image.jpg" 
+     alt="Описание изображения" 
+     width="300" 
+     height="200"&gt;</code></pre>
+        </div>
+        
+        <div id="tab2" class="tab-content">
+            <h3>Атрибуты тега img:</h3>
+            <ul>
+                <li><strong>src</strong> - путь к изображению</li>
+                <li><strong>alt</strong> - альтернативный текст (важно для доступности и SEO)</li>
+                <li><strong>width/height</strong> - размеры изображения</li>
+            </ul>
+        </div>
+        
+        <div id="tab3" class="tab-content">
+            <img src="https://via.placeholder.com/300x200" 
+                 alt="Пример изображения" 
+                 width="300" 
+                 height="200">
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            // Скрыть все вкладки
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Убрать активный класс у всех кнопок
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Показать выбранную вкладку
+            document.getElementById(tabId).classList.add('active');
+            
+            // Сделать кнопку активной
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
